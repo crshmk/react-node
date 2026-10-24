@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "strict": false,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "isolatedModules": true,
+    "target": "es6",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@http": ["./src/http/index.ts"],
+      "@http/*": ["./src/http/*"],      
+      "@img/*": ["./src/assets/img/*"],
+      "@src/*": ["./src/*"],
+      "@store/*": ["./src/store/*"],
+      "@utils/*": ["./src/utils/*"]
+    },
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

@@ -1,7 +1,7 @@
 import React, { JSX, Suspense } from 'react'
 import { Route } from 'react-router-dom'
 
-import { RouteInterface } from '../types'
+import type { RouteInterface } from '../types'
 
 import ProtectedRoute from './ProtectedRoute'
 

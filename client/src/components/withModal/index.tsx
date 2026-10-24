@@ -6,7 +6,7 @@ import React, { Component, Fragment } from 'react'
 
 import './with-modal.css'
 
-import { WithModalProps } from './types'
+import type { WithModalProps } from './types'
 
 export default function withModal<P extends WithModalProps>(ModalComponent: React.ComponentType<P>) {
   class Wrapped extends Component<P> {

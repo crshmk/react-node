@@ -1,4 +1,6 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
+
+import { apiHttp } from '@http'
 
 const initUserContext: UserContext = {
   user: {},
@@ -12,6 +14,12 @@ const useUser = () => useContext(UserContext)
 export const UserProvider: React.FC<WithChildren> = ({ children }) => {
   const [user, setUser] = useState({})
   const [isFetchingUser, setIsFetchingUser] = useState(false)
+
+  useEffect(() => {
+    apiHttp.get('/ping')
+      .then(console.log)
+      .catch(console.log)
+  }, [])
 
   const ctx: UserContext = { 
     isFetchingUser, 

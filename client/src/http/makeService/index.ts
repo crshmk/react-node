@@ -1,6 +1,6 @@
-import { AxiosInstance, AxiosResponse } from 'axios'
 import qs from 'qs'
 import makeAxios from './makeAxios'
+import type { AxiosInstance, AxiosResponse } from 'axios'
 
 type SerializableValue = string | number | boolean | Date | SerializableValue[] | { [key: string]: SerializableValue } | null | undefined
 

@@ -2,7 +2,7 @@ import { lazy } from 'react'
 
 import makeRoute from './makeRoute'
 
-import { RouteInterface } from './types'
+import type { RouteInterface } from './types'
 
 const Chat = lazy(() => import('@components/Chat'))
 const Home = lazy(() => import('@components/Home'))

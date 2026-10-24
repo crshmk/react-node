@@ -17,32 +17,30 @@ module.exports = {
     publicPath: '/'
   },
   module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.(jpg|jpeg|png|svg)$/,
-        type: 'asset/resource'
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
+   rules: [
+    {
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
+    },
+    {
+      test: /\.(jpg|jpeg|png|svg)$/,
+      type: 'asset/resource'
+    },
+    {
+      test: /\.[jt]sx?$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            '@babel/preset-env',
+            ['@babel/preset-react', { runtime: 'classic' }],
+            '@babel/preset-typescript'
+          ]
         }
-      },
-      {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
-        use: 'ts-loader'
       }
-    ]
-  },
+    }
+  ]},
   plugins: [
     new HtmlWebpackPlugin({
       template: resolve('src/index.html')
@@ -60,7 +58,7 @@ module.exports = {
       '@utils': resolve('src/utils')
     },
     modules: [
-        path.join(__dirname, 'node_modules')
+        path.join('node_modules')
     ]
 }
 }
